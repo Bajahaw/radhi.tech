@@ -84,8 +84,11 @@
             justify-content: center;
         }
 
+        a {
+            color: #ccc;
+        }
+
         .links a {
-            color: #fff;
             background: rgba(255, 255, 255, 0.2);
             padding: 8px 15px;
             border-radius: 30px;
@@ -93,10 +96,21 @@
             transition: transform 0.3s, background 0.3s;
         }
 
+
         .links a:hover {
             transform: scale(1.1);
             background: rgba(255, 255, 255, 0.3);
         }
+        small {
+            position: absolute;
+            top: 96%;
+            left: 50%;
+            color: #aaa;
+            text-wrap: nowrap;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
     </style>
 </head>
 <body>
@@ -114,6 +128,7 @@
         <a href="https://linkedin.com/in/radhi-bajahaw" target="_blank">LinkedIn</a>
     </div>
 </div>
+<small>Links not working? See <a href="https://status.radhi.tech">page status</a></small>
 <script>
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
