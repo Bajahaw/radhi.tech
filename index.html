@@ -1,103 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radhi - Software Engineer</title>
-  <link rel="icon" type="image/png" href="https://backend.radhi.tech/api/files/pbc_2337082678/928xsl4zft3fm51/67b3adcd_b0ff_4553_8ad0_59a07750ff42_favicon_jd0qcukk9c.png">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .alien {
-      position: absolute;
-      font-size: 4rem;
-      z-index: 1;
-      animation: alienMove 120s linear infinite;
-    }
-    @keyframes alienMove {
-      0% {
-        transform: translate(-10vw, 20vh) rotate(0deg);
-      }
-      50% {
-        transform: translate(110vw, 40vh) rotate(360deg);
-      }
-      100% {
-        transform: translate(-10vw, 20vh) rotate(720deg);
-      }
-    }
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      text-align: center;
-      z-index: 2;
-      animation: floatText 5s ease-in-out infinite;
-    }
-    @keyframes floatText {
-      0%   { transform: translate(-50%, -50%) translateY(0); }
-      50%  { transform: translate(-50%, -50%) translateY(-10px); }
-      100% { transform: translate(-50%, -50%) translateY(0); }
-    }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255,255,255,0.7);
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 0.5rem 0;
-      color: #ccc;
-      text-shadow: 0 0 8px rgba(255,255,255,0.5);
-    }
-    .links {
-      margin-top: 1rem;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-    .links a {
-      color: #fff;
-      background: rgba(255,255,255,0.2);
-      padding: 8px 15px;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .links a:hover {
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.3);
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Radhi - Software Engineer</title>
+    <link rel="icon" type="image/png"
+          href="https://backend.radhi.tech/api/files/pbc_2337082678/928xsl4zft3fm51/67b3adcd_b0ff_4553_8ad0_59a07750ff42_favicon_jd0qcukk9c.png">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            font-family: Ubuntu, sans-serif !important;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .alien {
+            position: absolute;
+            font-size: 4rem;
+            z-index: 1;
+            animation: alienMove 180s linear infinite;
+        }
+
+        @keyframes alienMove {
+            0% {
+                transform: translate(-10vw, 20vh) rotate(0deg);
+            }
+            50% {
+                transform: translate(110vw, 40vh) rotate(360deg);
+            }
+            100% {
+                transform: translate(-10vw, 20vh) rotate(720deg);
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            z-index: 2;
+            animation: floatText 5s ease-in-out infinite;
+        }
+
+        @keyframes floatText {
+            0% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+            50% {
+                transform: translate(-50%, -50%) translateY(-5px);
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            color: #ccc;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .links a {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .links a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
-  <div class="alien" id="alien"><img
-          src="https://backend.radhi.tech/api/files/pbc_2337082678/t7ij3bc99w31stg/sm_c6d8f036_1c7b_4c1d_bcb2_9ecff2cd6305_e749sdfgrx.png"
-          alt="Astronaut"
-          width="100px"></div>
-  <div class="container" id="content">
+<canvas id="starfield"></canvas>
+<div class="alien" id="alien"><img
+        src="https://backend.radhi.tech/api/files/pbc_2337082678/t7ij3bc99w31stg/sm_c6d8f036_1c7b_4c1d_bcb2_9ecff2cd6305_e749sdfgrx.png"
+        alt="Astronaut"
+        width="100px"></div>
+<div class="container" id="content">
     <h1>Radhi Bajahaw</h1>
     <h2>Software Engineer</h2>
     <div class="links">
-      <a href="https://portfolio.radhi.tech" target="_blank">Portfolio</a>
-      <a href="https://github.com/Bajahaw" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/radhi-bajahaw" target="_blank">LinkedIn</a>
+        <a href="https://portfolio.radhi.tech" target="_blank">Portfolio</a>
+        <a href="https://github.com/Bajahaw" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/radhi-bajahaw" target="_blank">LinkedIn</a>
     </div>
-  </div>
-  <script>
+</div>
+<script>
     const canvas = document.getElementById('starfield');
     const ctx = canvas.getContext('2d');
     let width = window.innerWidth, height = window.innerHeight;
@@ -107,35 +124,37 @@
     const stars = [];
     const numStars = 300;
     for (let i = 0; i < numStars; i++) {
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = Math.random() * Math.max(width, height) / 1.2;
-      stars.push({
-        x: distance * Math.cos(angle),
-        y: distance * Math.sin(angle),
-        size: Math.random() * 1.5 + 0.5
-      });
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = Math.random() * Math.max(width, height) / 1.2;
+        stars.push({
+            x: distance * Math.cos(angle),
+            y: distance * Math.sin(angle),
+            size: Math.random() * 1.5 + 0.5
+        });
     }
     let starRotation = 0;
+
     function animateStars() {
-      starRotation += 0.0001;
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "white";
-      stars.forEach(star => {
-        const x = star.x * Math.cos(starRotation) - star.y * Math.sin(starRotation);
-        const y = star.x * Math.sin(starRotation) + star.y * Math.cos(starRotation);
-        ctx.beginPath();
-        ctx.arc(width/2 + x, height/2 + y, star.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(animateStars);
+        starRotation += 0.0001;
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = "gray";
+        stars.forEach(star => {
+            const x = star.x * Math.cos(starRotation) - star.y * Math.sin(starRotation);
+            const y = star.x * Math.sin(starRotation) + star.y * Math.cos(starRotation);
+            ctx.beginPath();
+            ctx.arc(width / 2 + x, height / 2 + y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        requestAnimationFrame(animateStars);
     }
+
     animateStars();
     window.addEventListener('resize', () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
     });
-  </script>
+</script>
 </body>
 </html>
